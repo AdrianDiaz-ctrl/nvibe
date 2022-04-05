@@ -1,5 +1,5 @@
 <?php
-require_once "../controlador/controlador.usuarios.php";
+// require_once "../controlador/controlador.usuarios.php";
 
 if (!isset($_SESSION["validarIngreso"])) {
 
@@ -38,33 +38,32 @@ if (empty($usuario)) {
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Cédula</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Usuario</th>
-                <th scope="col">Acciones</th>
+                <th scope="col">Edad</th>
+                <th scope="col">ocupacion</th>
+                <th scope="col">correo</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($usuario as $fila => $columna) : ?>
                 <tr>
 
-                    <td><?php echo $columna["id_tusuario"] ?></td>
-                    <td><?php echo $columna["cedula"] ?></td>
+                    <td><?php echo $columna["id"] ?></td>
                     <td><?php echo $columna["nombre"] ?></td>
-                    <td><?php echo $columna["apellido"] ?></td>
-                    <td><?php echo $columna["usuario"] ?></td>
+                    <td><?php echo $columna["edad"] ?></td>
+                    <td><?php echo $columna["ocupacion"] ?></td>
+                    <td><?php echo $columna["correo"] ?></td>
                     <td>
                         <div class="btn-group">
                             <div class="px-1">
-
-                                <a href="index.php?pagina=editar&id=<?php echo $value["id"]; ?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                <!-- da error jeje -->
+                                <!-- <a href="index.php?pagina=editar&id=<?php echo $value['id']; ?>" class="btn btn-warning"><em class="fas fa-pencil-alt"></em></a> -->
 
                             </div>
 
                             <form method="post">
 
-                                <input type="hidden" value="<?php echo $columna["id_tusuario"]; ?>" name="eliminarUsuario">
+                                <input type="hidden" value="<?php echo $columna["id"]; ?>" name="eliminarUsuario">
 
                                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
 
@@ -82,8 +81,10 @@ if (empty($usuario)) {
             <?php endforeach ?>
         </tbody>
     </table>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
-
 </html>

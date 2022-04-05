@@ -1,5 +1,5 @@
 <?php
-require_once "../controlador/controlador.usuarios.php";
+// require_once "../controlador/controlador.usuarios.php";
 //Método para insertar un usuario en la base de datos
 if (isset($_POST["ingresar"])) {   //Se activa cuando el usuario da clic en el boton
 
@@ -15,13 +15,18 @@ if (isset($_POST["ingresar"])) {   //Se activa cuando el usuario da clic en el b
 
   if ($insertar == "ok") {
     echo "<script>
-        // alert('Usuario insertado correctamente...');
+        alert('Usuario insertado correctamente...');
         window.location = 'usuarios.php';
        </script>";
   }else if($insertar == "error") {
     echo "<script>
-        // alert('ERROR');
-        window.location = 'usuarios.php';
+        alert('ERROR');
+        window.location = 'registro.php';
+       </script>";
+  }else if($insertar == "error correo") {
+    echo "<script>
+        alert('ERROR: ESTE CORREO YA EXISTE');
+        window.location = 'registro.php';
        </script>";
   }
 }
@@ -69,7 +74,7 @@ if (isset($_POST["ingresar"])) {   //Se activa cuando el usuario da clic en el b
               <div class="form-label-group">
                 <label for="inputUserame">Ocupacion</label>
                 <select name="ocupacion" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                  <option value="otro"></option>
+                  <option value="otro">...</option>
                   <option value="carpintero">Carpintero</option>
                   <option value="cerrajero">Cerrajero</option>
                   <option value="plomero">Plomero</option>
@@ -90,7 +95,7 @@ if (isset($_POST["ingresar"])) {   //Se activa cuando el usuario da clic en el b
                 <br>
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" name="ingresar">Registrarse</button>
-              <a class="d-block text-center mt-2 small" href="login.php">Ya tienes una cuenta? Inicia Secion</a>
+              <a class="d-block text-center mt-2 small" href="index.php?pagina=login">Ya tienes una cuenta? Inicia Secion</a>
 
             </form>
           </div>

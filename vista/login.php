@@ -1,5 +1,5 @@
 <?php
-require_once "../controlador/controlador.usuarios.php";
+// require_once "../controlador/controlador.usuarios.php";
 //Método para insertar un usuario en la base de datos
 if (isset($_POST["ingresar"])) {   //Se activa cuando el usuario da clic en el boton
 
@@ -43,12 +43,8 @@ if (isset($_POST["ingresar"])) {   //Se activa cuando el usuario da clic en el b
                 <input type="password" class="form-control" id="exampleInputPassword1" name="clave" placeholder="Contraseña" required>
             </div>
 
-            
-      
-   
-
-            
             <button type="submit" name="ingresar" class="btn btn-primary">Ingresar</button>
+            <a class="d-block text-center mt-2 small" href="index.php?pagina=registro">Todavia no tienes una cuenta? Registrate</a>
             
         </form>
     </div>

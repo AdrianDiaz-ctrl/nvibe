@@ -58,13 +58,15 @@ session_start();
 					   $_GET["pagina"] == "login" ||
 					   $_GET["pagina"] == "usuarios" ||
 					   $_GET["pagina"] == "editar" ||
-					   $_GET["pagina"] == "salir"){
+					   $_GET["pagina"] == "salir" ||
+             $_GET["pagina"] == "home")
+          {
 
 						include "vista/".$_GET["pagina"].".php";
 
 					} else
                     {
-                        include "error404.php";
+                        include "vista/error404.php";
                     }
 
 

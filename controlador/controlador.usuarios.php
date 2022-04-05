@@ -1,6 +1,6 @@
 <?php
 
-require_once "../modelo/modelo.usuarios.php";
+// require_once "../modelo/modelo.usuarios.php";
 
 class ControladorUsuarios
 	{
