@@ -16,9 +16,9 @@ class ControladorUsuarios
 		static public function contrInsertarUsuarios($datos)
 		{
 			// 0 = cedula, 1 = nombre, 2 = apellido, 3 = usuario, 4 = clave, 5 = id_tusuario
-			if(!empty($datos[0])&&!empty($datos[1])&&!empty($datos[2])&&!empty($datos[3])&&!empty($datos[4])){
+			if(!empty($datos[0])&&!empty($datos[1])&&!empty($datos[2])&&!empty($datos[3])&&!empty($datos[4])&&!empty($datos[5])){
 
-				$datos1=array($datos[0],$datos[1],$datos[2],$datos[3],$datos[4]);
+				$datos1=array($datos[0],$datos[1],$datos[2],$datos[3],$datos[4],$datos[5]);
 
 				$respuesta = ModeloUsuarios::InsertarUsuarios($datos1);
 			}else{
